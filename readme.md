@@ -86,8 +86,8 @@ Note: Yamini Verma is my Sister she is using it that's why her name is in the co
 
 ---
 
-<img width="1510" height="581" alt="image" src="https://github.com/user-attachments/assets/24ffec70-81ea-4d6e-b001-d940fd1d2b40" />
- 
+<img width="1537" height="658" alt="image" src="https://github.com/user-attachments/assets/0812b578-bee5-47bc-97ea-427b35011647" />
+
 ---
 
 ## 🚀 Quick Start
