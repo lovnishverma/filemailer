@@ -353,7 +353,7 @@ Additional steps:
 **Solutions:**
 
 1. ✅ **Ensure Variable Type Consistency:** Since you are defining `AUTH_PASSWORD` directly in your Python code (and not using a `.env` file), the value **must be a string** (enclosed in quotes, e.g., `'123456'`). Defining it as an integer (e.g., `123456`) will cause authentication to fail because data received from the HTML form is always read as a string.
-2. ✅ **Check for Whitespace:** Verify that there are no accidental spaces inside the quotes (e.g., `' 175011 '`) or trailing typos.
+2. ✅ **Check for Whitespace:** Verify that there are no accidental spaces inside the quotes (e.g., `' 123456 '`) or trailing typos.
 3. ✅ **Reload Server:** You must reload the web application (click the green "Reload" button on the Web tab) for any changes to the variable in `flask_app.py` to take effect.
 
 #### Problem: "Files too large for Gmail"
