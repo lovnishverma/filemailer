@@ -17,7 +17,7 @@ load_dotenv(os.path.join(project_folder, '.env'))
 
 app = Flask(__name__)
 
-# ==================== CONFIGURATION ====================
+# CONFIGURATION
 EMAIL_ADDRESS = os.getenv('EMAIL_ADDRESS')
 EMAIL_PASSWORD = os.getenv('EMAIL_PASSWORD')
 RECIPIENT_EMAIL = os.getenv('RECIPIENT_EMAIL')
@@ -33,7 +33,7 @@ app.config['MAX_CONTENT_LENGTH'] = 100 * 1024 * 1024
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 CLEANUP_MINUTES = 30 
 
-# ==================== HELPER FUNCTIONS ====================
+# HELPER FUNCTIONS
 
 def cleanup_old_files():
     """Deletes files older than CLEANUP_MINUTES"""
@@ -90,7 +90,7 @@ def send_email(files_info):
     except Exception as e:
         return False, str(e)
 
-# ==================== ROUTES ====================
+# ROUTES
 
 @app.route('/')
 def index():
