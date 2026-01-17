@@ -77,12 +77,9 @@
 ## 📸 Screenshots
 
 ### Upload Interface
-```
 
 <img width="615" height="908" alt="image" src="https://github.com/user-attachments/assets/418202e7-8496-4d53-a2ec-0d5eddb767cf" />
 
-
-```
 
 ---
 
@@ -119,7 +116,6 @@
    EMAIL_PASSWORD=your-app-password-here
    RECIPIENT_EMAIL=where-to-send@email.com
    APP_SECRET_KEY=your-secret-key-123
-   AUTH_PASSWORD=175011
    ```
 
 4. **Run the application**
@@ -172,7 +168,6 @@
 | `EMAIL_PASSWORD` | Gmail App Password (16 chars) | `abcd efgh ijkl mnop` | ✅ Yes |
 | `RECIPIENT_EMAIL` | Where to send files | `recipient@email.com` | ✅ Yes |
 | `APP_SECRET_KEY` | Flask session security key | `random-secret-key-123` | ✅ Yes |
-| `AUTH_PASSWORD` | Upload access password | `175011` | ✅ Yes |
 
 ### Application Limits
 
