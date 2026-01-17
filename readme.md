@@ -80,7 +80,7 @@
 
 <img width="615" height="908" alt="image" src="https://github.com/user-attachments/assets/418202e7-8496-4d53-a2ec-0d5eddb767cf" />
 
-* Note:* Yamini Verma is my sister she is using it that's why her name is in the copyright section.
+# Note: Yamini Verma is my Sister she is using it that's why her name is in the copyright section.
 ---
 
 ## 🚀 Quick Start
