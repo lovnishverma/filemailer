@@ -167,3 +167,14 @@ def send_files():
         flash(f'System Error: {str(e)}', 'error')
 
     return redirect(url_for('index'))
+
+
+# ENTRY POINT
+# This block allows the app to be run locally for testing.
+# On PythonAnywhere, this is ignored because the WSGI file imports 'app' directly.
+
+if __name__ == '__main__':
+    # Local Development Settings
+    # debug=True allows hot-reloading when you change code locally
+    print("Starting FileMailer locally at http://127.0.0.1:5000")
+    app.run(debug=True, port=5000)
