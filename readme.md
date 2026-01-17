@@ -296,12 +296,12 @@ Deploy for free on PythonAnywhere:
    - Edit `app.py` or use PythonAnywhere environment settings
    - Add all credentials from `.env`
 
-5. **Install requirements**
+5. **Install requirements (optional you can skip these libraries are already installed in pythonanywhere by default)**
    ```bash
    pip install --user -r requirements.txt
    ```
 
-6. **Reload and test**
+6. **Reload and test (important step)**
    - Click "Reload" button
    - Visit your-username.pythonanywhere.com
 
