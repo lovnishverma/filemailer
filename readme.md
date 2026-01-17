@@ -212,7 +212,7 @@ CLEANUP_OLDER_THAN_MINUTES = 30  # File retention time
    - Watch for size warnings (yellow/red)
 
 4. **Enter password**
-   - Type access password (default: `175011`)
+   - Type access password (default: `Change in app.py code`)
 
 5. **Send**
    - Click "Send Files Now"
