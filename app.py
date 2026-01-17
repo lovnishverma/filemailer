@@ -27,8 +27,8 @@ AUTH_PASSWORD = '12345555'  # Note: Must be string
 UPLOAD_FOLDER = os.path.join(project_folder, 'uploads')
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
-# Gmail limit is 25MB encoded (approx 19MB actual file size)
-MAX_EMAIL_SIZE_MB = 19 
+# Gmail limit is 25MB encoded (approx 25MB actual file size)
+MAX_EMAIL_SIZE_MB = 25 
 app.config['MAX_CONTENT_LENGTH'] = 100 * 1024 * 1024 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 CLEANUP_MINUTES = 30 
