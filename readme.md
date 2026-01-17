@@ -1,209 +1,275 @@
-# FileMailer - Secure File Email Service
+# 📧 FileMailer - Secure File Email Service
 
-A lightweight Flask web application that allows users to upload and email multiple files instantly through Gmail's SMTP server. Perfect for quick file sharing without the need for cloud storage services.
+<div align="center">
 
-![Flask](https://img.shields.io/badge/Flask-3.0.0-000000?style=flat&logo=flask)
-![Python](https://img.shields.io/badge/Python-3.7+-3776AB?style=flat&logo=python)
-![License](https://img.shields.io/badge/License-MIT-green)
+![FileMailer Banner](https://img.shields.io/badge/FileMailer-Secure%20Transfer-red?style=for-the-badge&logo=gmail)
 
-## 🌟 Features
+**A beautiful, secure Flask web application for instant file sharing via email**
 
-- ✨ **Modern UI** - Beautiful gradient animated interface with Tailwind CSS
-- 📧 **Email Integration** - Direct Gmail SMTP integration for instant delivery
-- 📁 **Bulk Upload** - Upload up to 100 files simultaneously
-- 📊 **Real-time Feedback** - Live file count, size calculation, and warnings
-- 🔒 **Gmail Limit Protection** - Automatic validation against Gmail's 25MB attachment limit
-- 📱 **Responsive Design** - Works seamlessly on desktop and mobile devices
-- ⚡ **Fast Processing** - Efficient file handling and email delivery
-- 🎯 **User-Friendly** - Simple drag-and-drop interface with visual feedback
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-yaminiverma.pythonanywhere.com-blue?style=for-the-badge&logo=python)](https://yaminiverma.pythonanywhere.com/)
+[![GitHub](https://img.shields.io/badge/GitHub-lovnishverma%2Ffilemailer-black?style=for-the-badge&logo=github)](https://github.com/lovnishverma/filemailer)
 
-## 📋 Table of Contents
+[![Flask](https://img.shields.io/badge/Flask-3.0.0-000000?style=flat&logo=flask)](https://flask.palletsprojects.com/)
+[![Python](https://img.shields.io/badge/Python-3.7+-3776AB?style=flat&logo=python)](https://www.python.org/)
+[![License](https://img.shields.io/badge/License-MIT-green?style=flat)](LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 
-- [Features](#-features)
-- [Demo](#-demo)
-- [Prerequisites](#-prerequisites)
-- [Installation](#-installation)
-- [Configuration](#-configuration)
-- [Usage](#-usage)
-- [File Limits](#-file-limits)
-- [Gmail Setup](#-gmail-setup)
-- [Deployment](#-deployment)
-- [Troubleshooting](#-troubleshooting)
-- [FAQ](#-faq)
-- [Contributing](#-contributing)
-- [License](#-license)
+[Live Demo](https://yaminiverma.pythonanywhere.com/) • [Report Bug](https://github.com/lovnishverma/filemailer/issues) • [Request Feature](https://github.com/lovnishverma/filemailer/issues)
 
-## 🎬 Demo
+</div>
 
-1. Visit the application URL
-2. Click or drag files to upload area
-3. See live preview with file names and sizes
-4. Submit to send via email
-5. Receive confirmation message
+---
 
-## 🔧 Prerequisites
+## 🎬 Live Demo
 
-- **Python 3.7+** installed on your system
-- **Gmail account** with 2-Step Verification enabled
-- **Gmail App Password** (see [Gmail Setup](#-gmail-setup))
-- **pip** package manager
+**Try it now:** [https://yaminiverma.pythonanywhere.com/](https://yaminiverma.pythonanywhere.com/)
 
-## 📥 Installation
+> **Note:** The live demo requires an access password for security. Contact the repository owner for demo access.
 
-### Step 1: Clone or Download
+---
 
-```bash
-# Clone the repository (if using Git)
-git clone https://github.com/yourusername/filemailer.git
-cd filemailer
+## ✨ Features
 
-# OR download and extract the ZIP file
+### 🎨 **Beautiful Modern UI**
+- Animated gradient background with smooth transitions
+- Responsive design that works on all devices
+- Drag-and-drop file upload interface
+- Real-time file preview with icons
+- Elegant flash message notifications
+
+### 🔒 **Security & Privacy**
+- Password-protected uploads
+- Secure file handling with werkzeug
+- Automatic file cleanup after sending
+- Session security with secret keys
+- Environment variable configuration
+
+### 📁 **Smart File Management**
+- Upload up to **100 files** simultaneously
+- Support for **all file types** (PDF, images, documents, etc.)
+- Real-time size calculation and validation
+- Gmail 25MB limit enforcement
+- Individual file icons and size display
+
+### 🗑️ **Auto-Cleanup System**
+- Immediate file deletion after email sent
+- Background cleanup every 5 minutes
+- Removes files older than 30 minutes
+- Manual cleanup option available
+- Zero file retention for privacy
+
+### 📧 **Email Features**
+- Direct Gmail SMTP integration
+- Detailed email with file list and sizes
+- Professional email formatting
+- Attachment support up to 25MB (Gmail limit)
+- Instant delivery confirmation
+
+### 💡 **User Experience**
+- Live file count and total size display
+- Color-coded warnings (yellow/red for size limits)
+- Loading states with spinner animations
+- File type-specific icons
+- Auto-dismissing notifications
+
+---
+
+## 📸 Screenshots
+
+### Upload Interface
+```
+┌─────────────────────────────────────────┐
+│          📧 FileMailer                  │
+├─────────────────────────────────────────┤
+│                                         │
+│         ☁️ Upload Files                 │
+│    Send documents securely via email   │
+│                                         │
+│  ┌───────────────────────────────────┐ │
+│  │   📁 Click to upload or drag      │ │
+│  │      Any file type • Max 100      │ │
+│  └───────────────────────────────────┘ │
+│                                         │
+│  ✅ 5 files ready to send    12.34 MB  │
+│                                         │
+│  🔒 [Enter Access Password]            │
+│                                         │
+│  [ 🚀 Send Files Now ]                 │
+│                                         │
+└─────────────────────────────────────────┘
 ```
 
-### Step 2: Create Virtual Environment (Recommended)
+---
 
-```bash
-# Create virtual environment
-python -m venv venv
+## 🚀 Quick Start
 
-# Activate virtual environment
-# On Windows:
-venv\Scripts\activate
+### Prerequisites
+- Python 3.7 or higher
+- Gmail account with App Password
+- pip package manager
 
-# On macOS/Linux:
-source venv/bin/activate
-```
+### Installation
 
-### Step 3: Install Dependencies
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/lovnishverma/filemailer.git
+   cd filemailer
+   ```
 
-```bash
-pip install flask
-```
+2. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-That's it! Flask is the only dependency needed.
+3. **Configure environment variables**
+   
+   Create a `.env` file in the project root:
+   ```bash
+   cp .env.example .env
+   ```
+   
+   Edit `.env` with your credentials:
+   ```env
+   EMAIL_ADDRESS=your-gmail@gmail.com
+   EMAIL_PASSWORD=your-app-password-here
+   RECIPIENT_EMAIL=where-to-send@email.com
+   APP_SECRET_KEY=your-secret-key-123
+   AUTH_PASSWORD=175011
+   ```
 
-## ⚙️ Configuration
+4. **Run the application**
+   ```bash
+   python app.py
+   ```
 
-### Edit app.py
+5. **Open browser**
+   ```
+   http://localhost:5000
+   ```
 
-Open `app.py` and update the configuration section:
+---
 
-```python
-# ----------------- CONFIGURATION -----------------
-EMAIL_ADDRESS = "your-email@gmail.com"        # Your Gmail address
-EMAIL_PASSWORD = "your app password here"      # Gmail App Password (16 chars)
-RECIPIENT_EMAIL = "recipient@email.com"        # Where to send files
+## 📧 Gmail App Password Setup
 
-# Optional: Adjust limits
-app.config['MAX_CONTENT_LENGTH'] = 500 * 1024 * 1024  # 500MB max upload
-MAX_FILES = 100  # Maximum number of files
-# -------------------------------------------------
-```
-
-### Important Configuration Notes:
-
-- **EMAIL_PASSWORD**: Must be a Gmail App Password (NOT your regular Gmail password)
-- **MAX_CONTENT_LENGTH**: Flask upload limit (default: 500MB)
-- **MAX_FILES**: Maximum files per upload (default: 100)
-- Gmail has a hard limit of 25MB total attachments - the app enforces this
-
-## 📧 Gmail Setup
-
-### Generate Gmail App Password
+### Step-by-Step Guide
 
 1. **Enable 2-Step Verification**
    - Go to https://myaccount.google.com/security
-   - Find "2-Step Verification" and turn it on
-   - Complete the setup process
+   - Enable "2-Step Verification"
 
-2. **Create App Password**
+2. **Generate App Password**
    - Visit https://myaccount.google.com/apppasswords
    - Select app: **Mail**
-   - Select device: **Other (Custom name)** → Type "FileMailer"
+   - Select device: **Other** → Enter "FileMailer"
    - Click **Generate**
-   - Copy the 16-character password (format: `xxxx xxxx xxxx xxxx`)
 
-3. **Update app.py**
-   ```python
-   EMAIL_PASSWORD = "abcd efgh ijkl mnop"  # Your generated password
+3. **Copy the password**
+   ```
+   Format: xxxx xxxx xxxx xxxx (16 characters)
    ```
 
-### Why App Password?
+4. **Update .env file**
+   ```env
+   EMAIL_PASSWORD=abcd efgh ijkl mnop
+   ```
 
-- Gmail doesn't allow regular passwords for SMTP access
-- App Passwords are more secure and app-specific
-- They can be revoked without changing your main password
+> ⚠️ **Important:** Use App Password, NOT your regular Gmail password!
 
-## 🚀 Usage
+---
 
-### Starting the Application
+## ⚙️ Configuration
 
-```bash
-# Make sure you're in the project directory
-# and virtual environment is activated
+### Environment Variables
 
-python app.py
+| Variable | Description | Example | Required |
+|----------|-------------|---------|----------|
+| `EMAIL_ADDRESS` | Your Gmail address (sender) | `youremail@gmail.com` | ✅ Yes |
+| `EMAIL_PASSWORD` | Gmail App Password (16 chars) | `abcd efgh ijkl mnop` | ✅ Yes |
+| `RECIPIENT_EMAIL` | Where to send files | `recipient@email.com` | ✅ Yes |
+| `APP_SECRET_KEY` | Flask session security key | `random-secret-key-123` | ✅ Yes |
+| `AUTH_PASSWORD` | Upload access password | `175011` | ✅ Yes |
+
+### Application Limits
+
+| Setting | Default Value | Description |
+|---------|---------------|-------------|
+| Max Files | 100 | Maximum files per upload |
+| Max Upload Size | 500 MB | Flask upload limit |
+| Gmail Limit | 25 MB | Total attachment size (enforced) |
+| Cleanup Interval | 5 minutes | Background cleanup frequency |
+| File Retention | 30 minutes | Delete files older than this |
+
+### Customization
+
+Edit `app.py` to customize:
+
+```python
+# File Upload Settings
+MAX_FILES = 100  # Change maximum file count
+app.config['MAX_CONTENT_LENGTH'] = 500 * 1024 * 1024  # Change size limit
+
+# Auto-cleanup settings
+CLEANUP_AFTER_SEND = True  # Delete after sending
+AUTO_CLEANUP_ENABLED = True  # Enable background cleanup
+CLEANUP_OLDER_THAN_MINUTES = 30  # File retention time
 ```
 
-You should see:
-```
- * Running on http://127.0.0.1:5000
- * Running on http://0.0.0.0:5000
-```
+---
 
-### Using the Web Interface
+## 🎯 Usage Guide
 
-1. **Open Browser**
-   - Navigate to: `http://localhost:5000`
-   - Or use your computer's IP for network access
+### Basic Upload Flow
 
-2. **Upload Files**
-   - Click the upload area or drag files
-   - Select up to 100 files (any file type)
-   - See real-time file list and size calculation
+1. **Visit the application**
+   - Open http://localhost:5000 (or live demo)
 
-3. **Submit**
+2. **Select files**
+   - Click upload area OR drag and drop
+   - Up to 100 files, max 25MB total
+
+3. **Review files**
+   - Check file list with individual sizes
+   - Watch for size warnings (yellow/red)
+
+4. **Enter password**
+   - Type access password (default: `175011`)
+
+5. **Send**
    - Click "Send Files Now"
-   - Wait for confirmation message
-   - Check recipient email inbox
+   - Wait for confirmation
+   - Check recipient email!
 
-### Success Response
+### Advanced Features
 
-After successful upload, you'll see:
+#### Manual Cleanup
+If temporary files exist, a cleanup button appears:
 ```
-Success! Files mailed via Gmail.
-Sent 5 file(s) totaling 12.34MB
+🗑️ Clean 3 temporary file(s)
 ```
 
-## 📊 File Limits
+#### Size Warnings
+- **Green** (< 20MB): ✅ Safe to send
+- **Yellow** (20-25MB): ⚠️ Close to limit
+- **Red** (> 25MB): ❌ Too large, blocked
 
-| Limit Type | Value | Notes |
-|------------|-------|-------|
-| **Max Files** | 100 files | Per single upload |
-| **Max Upload Size** | 500 MB | Total Flask limit |
-| **Gmail Attachment Limit** | 25 MB | **Enforced by app** |
-| **File Types** | Any | No restrictions |
+#### File Type Icons
+Files display with appropriate icons:
+- 📄 PDF files
+- 📘 Word documents
+- 📗 Excel spreadsheets
+- 📙 PowerPoint presentations
+- 🖼️ Images (JPG, PNG, GIF)
+- 📦 Archives (ZIP, RAR)
 
-### Gmail Limit Handling
-
-The app automatically checks total file size:
-
-- **Under 20MB**: ✅ Green light - sends normally
-- **20-25MB**: ⚠️ Warning shown - sends with caution
-- **Over 25MB**: ❌ Rejected with helpful message:
-  ```
-  Warning: Files too large for Gmail
-  Total size: 28.5MB
-  Gmail has a 25MB limit for attachments.
-  ```
+---
 
 ## 🌐 Deployment
 
 ### Local Network Access
 
-To access from other devices on your network:
+Share on your local network:
 
-1. Find your computer's IP address:
+1. **Find your IP address**
    ```bash
    # Windows
    ipconfig
@@ -212,43 +278,47 @@ To access from other devices on your network:
    ifconfig
    ```
 
-2. Run the app:
+2. **Run the app**
    ```bash
    python app.py
    ```
 
-3. Access from other devices:
+3. **Access from other devices**
    ```
    http://YOUR-IP-ADDRESS:5000
    ```
 
 ### PythonAnywhere Deployment
 
-Perfect for hosting this app for free!
+Deploy for free on PythonAnywhere:
 
-1. **Create Account**
+1. **Create account**
    - Sign up at https://www.pythonanywhere.com
    - Choose free tier
 
-2. **Upload Files**
-   - Upload `app.py` and `templates/index.html`
-   - Create `templates` folder if needed
+2. **Upload files**
+   - Upload `app.py`, `templates/`, and `requirements.txt`
+   - Create `uploads/` folder
 
-3. **Configure Web App**
+3. **Configure web app**
    - Go to Web tab
-   - Create new web app (Flask)
-   - Set Python version (3.7+)
+   - Create new Flask app
    - Point to your `app.py`
 
-4. **Update Settings**
-   - Edit `app.py` with your Gmail credentials
-   - Set `debug=False` for production
+4. **Set environment variables**
+   - Edit `app.py` or use PythonAnywhere environment settings
+   - Add all credentials from `.env`
 
-5. **Reload**
+5. **Install requirements**
+   ```bash
+   pip install --user -r requirements.txt
+   ```
+
+6. **Reload and test**
    - Click "Reload" button
-   - Access via your PythonAnywhere URL
+   - Visit your-username.pythonanywhere.com
 
-### Production Considerations
+### Production Recommendations
 
 For production deployment:
 
@@ -256,90 +326,169 @@ For production deployment:
 # app.py - Production settings
 if __name__ == '__main__':
     app.run(
-        debug=False,           # Disable debug mode
-        host='0.0.0.0',        # Allow external connections
-        port=5000,             # Standard port
-        threaded=True          # Handle multiple requests
+        debug=False,        # Disable debug mode
+        host='0.0.0.0',     # Allow external connections
+        port=5000,
+        threaded=True       # Handle multiple requests
     )
 ```
 
-Additional recommendations:
-- Use environment variables for credentials
-- Implement rate limiting
-- Add user authentication
-- Set up HTTPS/SSL
-- Use production WSGI server (Gunicorn, uWSGI)
-- Add logging for monitoring
-- Implement error tracking
+Additional steps:
+- ✅ Use strong `APP_SECRET_KEY`
+- ✅ Set `debug=False`
+- ✅ Use environment variables (not hardcoded)
+- ✅ Implement rate limiting
+- ✅ Add HTTPS/SSL
+- ✅ Use production WSGI server (Gunicorn)
+- ✅ Set up logging
+- ✅ Add monitoring
+
+---
 
 ## 🐛 Troubleshooting
 
 ### Email Not Sending
 
-**Problem**: "Authentication failed" or "Login failed"
+#### Problem: "Authentication failed"
 
-**Solutions**:
-1. ✅ Verify you're using **App Password**, not regular password
-2. ✅ Check 2-Step Verification is enabled
-3. ✅ Ensure no extra spaces in EMAIL_PASSWORD
-4. ✅ Try generating a new App Password
-5. ✅ Check Gmail security alerts: https://myaccount.google.com/notifications
+**Solutions:**
+1. ✅ Use **App Password**, not regular Gmail password
+2. ✅ Enable 2-Step Verification first
+3. ✅ Verify no extra spaces in `EMAIL_PASSWORD`
+4. ✅ Generate new App Password
+5. ✅ Check Gmail security: https://myaccount.google.com/notifications
 
-**Problem**: "Connection refused" or "Timeout"
+#### Problem: "Connection timeout"
 
-**Solutions**:
+**Solutions:**
 1. ✅ Check internet connection
-2. ✅ Verify firewall isn't blocking port 587
-3. ✅ Try different network (sometimes corporate networks block SMTP)
-4. ✅ Check if Gmail is down: https://www.google.com/appsstatus
+2. ✅ Verify firewall allows port 587
+3. ✅ Try different network (corporate networks may block SMTP)
+4. ✅ Check Gmail status: https://www.google.com/appsstatus
 
 ### File Upload Issues
 
-**Problem**: "413 Request Entity Too Large"
+#### Problem: "Invalid password"
 
-**Solutions**:
-1. ✅ Total upload exceeds 500MB - reduce file count/size
-2. ✅ Check `MAX_CONTENT_LENGTH` in app.py
-3. ✅ Consider compressing files first
+**Solutions:**
+1. ✅ Verify `AUTH_PASSWORD` in `.env` matches entered password
+2. ✅ Check for typos or extra spaces
+3. ✅ Restart app after changing `.env`
 
-**Problem**: "Files too large for Gmail" error
+#### Problem: "Files too large for Gmail"
 
-**Solutions**:
-1. ✅ Total size exceeds 25MB (Gmail limit)
+**Solutions:**
+1. ✅ Total size exceeds 25MB (Gmail hard limit)
 2. ✅ Upload fewer files
 3. ✅ Compress files with ZIP/RAR
-4. ✅ Use cloud storage (Google Drive, Dropbox) instead
+4. ✅ Use cloud storage for large files
 5. ✅ Split into multiple emails
 
-**Problem**: Files not appearing in upload area
+#### Problem: "413 Request Entity Too Large"
 
-**Solutions**:
-1. ✅ Check browser console for JavaScript errors
-2. ✅ Try different browser (Chrome, Firefox recommended)
-3. ✅ Clear browser cache
-4. ✅ Check file permissions
+**Solutions:**
+1. ✅ Total upload exceeds 500MB
+2. ✅ Reduce file count or size
+3. ✅ Check `MAX_CONTENT_LENGTH` in `app.py`
 
 ### Interface Issues
 
-**Problem**: Styling broken or missing
+#### Problem: "Template not found"
 
-**Solutions**:
-1. ✅ Check internet connection (Tailwind CSS loads from CDN)
-2. ✅ Verify `templates/index.html` is in correct location
-3. ✅ Clear browser cache (Ctrl+F5)
-
-**Problem**: "Template not found" error
-
-**Solutions**:
+**Solutions:**
 1. ✅ Ensure `templates/` folder exists
 2. ✅ Verify `index.html` is inside `templates/`
-3. ✅ Check file name is exactly `index.html` (case-sensitive on Linux)
+3. ✅ Check file name case (case-sensitive on Linux)
+
+#### Problem: "Styling broken"
+
+**Solutions:**
+1. ✅ Check internet (Tailwind CSS loads from CDN)
+2. ✅ Clear browser cache (Ctrl+F5)
+3. ✅ Try different browser
+
+---
+
+## 📊 Project Structure
+
+```
+filemailer/
+│
+├── app.py                          # Main Flask application
+│   ├── Configuration               # Email, security, file settings
+│   ├── Helper Functions            # File handling, cleanup, email
+│   ├── Background Tasks            # Auto-cleanup thread
+│   ├── Routes                      # /, /send, /cleanup
+│   └── Error Handlers              # 413, 500 errors
+│
+├── templates/
+│   └── index.html                  # Frontend interface
+│       ├── Navigation              # Header with branding
+│       ├── Flash Messages          # Animated notifications
+│       ├── Upload Area             # Drag-and-drop zone
+│       ├── File Preview            # Live file list
+│       ├── Password Field          # Access control
+│       └── JavaScript              # File validation, UI
+│
+├── uploads/                        # Temporary file storage (auto-created)
+│
+├── .env                            # Environment variables (create this)
+├── .env.example                    # Configuration template
+├── requirements.txt                # Python dependencies
+├── .gitignore                      # Git ignore rules
+└── README.md                       # This file
+```
+
+---
+
+## 🔐 Security Features
+
+### Built-in Security
+
+1. **Password Protection**
+   - Required for all uploads
+   - Server-side validation
+   - Environment variable storage
+
+2. **Secure File Handling**
+   - `secure_filename()` prevents directory traversal
+   - Timestamp-based unique naming
+   - Automatic cleanup (no file retention)
+
+3. **Session Security**
+   - Flask secret key for sessions
+   - CSRF protection ready
+   - Secure cookie handling
+
+4. **Data Privacy**
+   - Files deleted immediately after send
+   - Background cleanup for orphaned files
+   - No database or logging of file contents
+
+### Best Practices
+
+✅ **DO:**
+- Use strong, unique `APP_SECRET_KEY`
+- Change `AUTH_PASSWORD` from default
+- Keep `.env` file secure (never commit)
+- Use HTTPS in production
+- Rotate App Passwords regularly
+
+❌ **DON'T:**
+- Share your `.env` file
+- Use regular Gmail password (use App Password)
+- Commit credentials to Git
+- Run with `debug=True` in production
+
+---
 
 ## ❓ FAQ
 
+### General Questions
+
 **Q: Can I use this with other email providers?**
 
-A: Yes! Update the SMTP settings in app.py:
+A: Yes! Update SMTP settings in `app.py`:
 ```python
 # For Outlook/Hotmail
 server = smtplib.SMTP('smtp-mail.outlook.com', 587)
@@ -350,78 +499,132 @@ server = smtplib.SMTP('smtp.mail.yahoo.com', 587)
 
 **Q: How do I send to multiple recipients?**
 
-A: Modify app.py:
-```python
-RECIPIENT_EMAIL = "email1@example.com,email2@example.com"
-# Or use a list
-RECIPIENT_EMAIL = ["email1@example.com", "email2@example.com"]
+A: Modify `RECIPIENT_EMAIL` in `.env`:
+```env
+RECIPIENT_EMAIL=email1@example.com,email2@example.com
 ```
 
-**Q: Can I add password protection?**
+**Q: Can I change the upload password?**
 
-A: Yes! Add authentication to the route:
-```python
-@app.route('/send', methods=['POST'])
-def send_email():
-    password = request.form.get('password')
-    if password != 'YOUR_SECRET_PASSWORD':
-        return "Unauthorized", 401
-    # ... rest of code
+A: Yes! Edit `.env`:
+```env
+AUTH_PASSWORD=your-new-password
+```
+Then restart the app.
+
+**Q: Why 25MB limit when Flask allows 500MB?**
+
+A: Gmail has a strict 25MB limit for email attachments. The app enforces this to prevent send failures.
+
+**Q: Are uploaded files stored permanently?**
+
+A: No! Files are deleted:
+- Immediately after sending
+- After 30 minutes if unsent
+- Via manual cleanup button
+- By background cleanup task
+
+### Technical Questions
+
+**Q: How do I generate a secure APP_SECRET_KEY?**
+
+A: Run this command:
+```bash
+python -c "import secrets; print(secrets.token_hex(32))"
 ```
 
-**Q: How do I customize the email subject/body?**
+**Q: Can I customize the email template?**
 
-A: Edit these lines in app.py:
+A: Yes! Edit the `body` variable in `send_email_with_attachments()` function in `app.py`.
+
+**Q: How do I disable auto-cleanup?**
+
+A: Edit `app.py`:
 ```python
-msg['Subject'] = f"Custom Subject: {len(files)} file(s)"
-body = "Your custom email message here"
+CLEANUP_AFTER_SEND = False
+AUTO_CLEANUP_ENABLED = False
 ```
 
-**Q: Can I save uploaded files instead of deleting them?**
+**Q: Can I add file type restrictions?**
 
-A: Yes! Remove the cleanup code and save files:
+A: Yes! Add validation in `save_uploaded_files()`:
 ```python
-# Save files to disk
-for fd in file_data:
-    with open(f"saved_files/{fd['name']}", 'wb') as f:
-        f.write(fd['content'])
+ALLOWED_EXTENSIONS = {'pdf', 'png', 'jpg', 'jpeg'}
+
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 ```
 
-**Q: Is this secure?**
-
-A: Considerations:
-- ✅ Gmail App Password is secure
-- ⚠️ Files are transmitted over HTTPS (if deployed properly)
-- ⚠️ No encryption on uploaded files (they're emailed as-is)
-- ⚠️ Add authentication for production use
-- ⚠️ Use environment variables for credentials
+---
 
 ## 🤝 Contributing
 
-Contributions are welcome! Here's how:
+Contributions are welcome! Here's how you can help:
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+### How to Contribute
 
-### Ideas for Contributions
+1. **Fork the repository**
+   ```bash
+   git clone https://github.com/lovnishverma/filemailer.git
+   ```
 
-- [ ] User authentication system
-- [ ] Multiple email provider support
-- [ ] File preview before sending
-- [ ] Upload progress bar
-- [ ] Email templates
-- [ ] Scheduled sending
-- [ ] File compression
-- [ ] Cloud storage integration (Google Drive, Dropbox)
+2. **Create a feature branch**
+   ```bash
+   git checkout -b feature/amazing-feature
+   ```
+
+3. **Make your changes**
+   - Follow existing code style
+   - Add comments for complex logic
+   - Test thoroughly
+
+4. **Commit changes**
+   ```bash
+   git commit -m 'Add amazing feature'
+   ```
+
+5. **Push to branch**
+   ```bash
+   git push origin feature/amazing-feature
+   ```
+
+6. **Open Pull Request**
+   - Describe your changes
+   - Link any related issues
+   - Wait for review
+
+### Contribution Ideas
+
+- [ ] Multi-language support (i18n)
 - [ ] Database for tracking sent emails
-- [ ] Rate limiting
+- [ ] User authentication system
+- [ ] File compression before sending
+- [ ] Cloud storage integration (Google Drive, Dropbox)
+- [ ] Email scheduling/delayed send
+- [ ] Upload progress bar
+- [ ] File preview before sending
+- [ ] Dark mode toggle
+- [ ] Mobile app (React Native/Flutter)
+- [ ] REST API for programmatic access
+- [ ] Webhook notifications
+- [ ] Email templates
+- [ ] Multiple recipient groups
+- [ ] File encryption
 
-## 📄 License
+### Code of Conduct
 
-This project is licensed under the MIT License - see below for details:
+- Be respectful and inclusive
+- Follow the project's coding standards
+- Test your changes before submitting
+- Document new features
+- Help review others' PRs
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License.
 
 ```
 MIT License
@@ -447,85 +650,93 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-## 📞 Support
-
-If you encounter issues:
-
-1. **Check Troubleshooting Section** above
-2. **Review Gmail SMTP Guide**: https://support.google.com/mail/answer/7126229
-3. **Flask Documentation**: https://flask.palletsprojects.com/
-4. **Open an Issue**: Create a detailed bug report with:
-   - Error message
-   - Steps to reproduce
-   - Python version
-   - Operating system
+---
 
 ## 🙏 Acknowledgments
 
-- **Flask** - Web framework
-- **Tailwind CSS** - Styling
-- **Font Awesome** - Icons
-- **Gmail SMTP** - Email delivery
-- **Inter Font** - Typography
+### Technologies Used
 
-## 📊 Project Structure
+- **[Flask](https://flask.palletsprojects.com/)** - Python web framework
+- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
+- **[Font Awesome](https://fontawesome.com/)** - Icon library
+- **[Google Fonts (Inter)](https://fonts.google.com/)** - Typography
+- **[Gmail SMTP](https://support.google.com/mail/answer/7126229)** - Email delivery
+- **[Werkzeug](https://werkzeug.palletsprojects.com/)** - WSGI utilities
+- **[PythonAnywhere](https://www.pythonanywhere.com/)** - Hosting platform
 
-```
-filemailer/
-│
-├── app.py                     # Main Flask application
-│   ├── Configuration          # Email settings, file limits
-│   ├── Routes                 # / (index), /send (upload handler)
-│   ├── Email Handler          # SMTP connection and sending
-│   └── Error Handlers         # 413 file too large
-│
-├── templates/
-│   └── index.html            # Frontend interface
-│       ├── Navigation        # Header with branding
-│       ├── Upload Area       # Drag-and-drop zone
-│       ├── File Preview      # Live file list with sizes
-│       ├── Warnings          # Gmail limit alerts
-│       └── JavaScript        # File validation and UI updates
-│
-├── README.md                 # This file
-├── requirements.txt          # Python dependencies (optional)
-└── .gitignore               # Git ignore rules (optional)
-```
+### Inspiration
 
-## 🔐 Security Best Practices
-
-1. **Never commit credentials** to version control
-2. **Use environment variables** in production
-3. **Enable HTTPS** for production deployment
-4. **Implement rate limiting** to prevent abuse
-5. **Add CSRF protection** for forms
-6. **Validate file types** if restricting uploads
-7. **Scan uploaded files** for malware in production
-8. **Use strong App Passwords** and rotate regularly
-
-## 📈 Future Roadmap
-
-- [ ] Dark mode toggle
-- [ ] Multiple language support
-- [ ] Email scheduling
-- [ ] File encryption before sending
-- [ ] Upload history with search
-- [ ] Bulk email to multiple recipients
-- [ ] Integration with cloud storage APIs
-- [ ] Mobile app (React Native/Flutter)
-- [ ] REST API for programmatic access
-- [ ] Webhook notifications
+- Modern web design principles
+- User privacy and security best practices
+- Simple, effective file sharing solutions
 
 ---
 
-**Made with ❤️ by Lovnish Verma**
+## 📞 Support & Contact
 
-**Last Updated**: January 2026
+### Get Help
 
-**Version**: 2.0.0 (Enhanced Limits Edition)
+- 🐛 **Report Bugs:** [GitHub Issues](https://github.com/lovnishverma/filemailer/issues)
+- 💡 **Request Features:** [GitHub Issues](https://github.com/lovnishverma/filemailer/issues)
+- 📧 **Email:** [Create an issue for support](https://github.com/lovnishverma/filemailer/issues)
 
-For questions or feedback, please open an issue or contact the maintainer.
+### Resources
+
+- **Flask Documentation:** https://flask.palletsprojects.com/
+- **Gmail SMTP Guide:** https://support.google.com/mail/answer/7126229
+- **PythonAnywhere Docs:** https://help.pythonanywhere.com/
 
 ---
+
+## 📈 Roadmap
+
+### Version 1.0 ✅
+- [x] Basic file upload and email
+- [x] Gmail SMTP integration
+- [x] Password protection
+- [x] Auto-cleanup system
+- [x] Modern UI/UX
+- [x] Flash messages
+- [x] File preview
+
+### Version 2.0 🚧
+- [ ] User authentication
+- [ ] Upload history
+- [ ] Email templates
+- [ ] Multiple recipients
+- [ ] File compression
+- [ ] Cloud storage integration
+
+### Version 3.0 📋
+- [ ] REST API
+- [ ] Mobile app
+- [ ] Scheduled sending
+- [ ] File encryption
+- [ ] Admin dashboard
+- [ ] Analytics
+
+---
+
+## 📊 Stats
+
+<div align="center">
+
+![GitHub stars](https://img.shields.io/github/stars/lovnishverma/filemailer?style=social)
+![GitHub forks](https://img.shields.io/github/forks/lovnishverma/filemailer?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/lovnishverma/filemailer?style=social)
+
+</div>
+
+---
+
+<div align="center">
+
+**Made with ❤️ by [Lovnish Verma](https://github.com/lovnishverma)**
+
+**Last Updated:** January 2026 | **Version:** 1.0.0
 
 ⭐ **Star this repo** if you find it helpful!
+
+[🔗 Live Demo](https://yaminiverma.pythonanywhere.com/) • [📁 GitHub](https://github.com/lovnishverma/filemailer) • [🐛 Issues](https://github.com/lovnishverma/filemailer/issues)
+
+</div>
