@@ -21,7 +21,7 @@ RECIPIENT_EMAIL = os.getenv('RECIPIENT_EMAIL', 'yamini.verma1600@gmail.com')
 
 # Security Settings
 app.secret_key = os.getenv('APP_SECRET_KEY', secrets.token_hex(32))
-AUTH_PASSWORD = os.getenv('AUTH_PASSWORD', '175011')
+AUTH_PASSWORD = os.getenv('AUTH_PASSWORD')
 
 # File Upload Settings
 UPLOAD_FOLDER = 'uploads'
