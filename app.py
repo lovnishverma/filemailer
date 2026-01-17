@@ -22,7 +22,7 @@ EMAIL_ADDRESS = os.getenv('EMAIL_ADDRESS')
 EMAIL_PASSWORD = os.getenv('EMAIL_PASSWORD')
 RECIPIENT_EMAIL = os.getenv('RECIPIENT_EMAIL')
 app.secret_key = os.getenv('APP_SECRET_KEY', secrets.token_hex(32))
-AUTH_PASSWORD = '175011'  # Note: Must be string
+AUTH_PASSWORD = '12345555'  # Note: Must be string
 
 UPLOAD_FOLDER = os.path.join(project_folder, 'uploads')
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
